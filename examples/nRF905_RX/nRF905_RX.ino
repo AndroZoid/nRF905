@@ -1,4 +1,3 @@
-
 #include <NRF905.h>
 #include <SPI.h>
 #define BUF_LEN          32
@@ -48,7 +47,7 @@ void setup()
         BRASIL		921.42MHz
         RUSSIA		896MHz
     */ 
-	nrf905.write_config(write_config_buf); 	
+	nrf905.write_config(EUROPE); 	
     
     /***********************************************************
 	read register configuration, check register value written */
