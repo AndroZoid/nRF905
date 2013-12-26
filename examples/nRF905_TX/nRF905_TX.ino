@@ -8,15 +8,6 @@
 
 unsigned char tx_buf[BUF_LEN]= "Hi, Arduino   \r\n";
 unsigned char read_config_buf[CONF_LEN];
-unsigned char write_config_buf[CONF_LEN]={
-    0x76,                   //CH_NO,868.4MHZ
-    0x0E,                   //output power 10db, resend disable, Current Normal operation
-    0x44,                   //4-byte address
-    0x20,0x20,              //receive or send data length 32 bytes
-    0xCC,0xCC,0xCC,0xCC,    //receiving address
-    0x58,                   //CRC enable,8bit CRC,external clock disable,16MHZ Oscillator
-};
-
 byte tx_address[4]= {0xcc,0xcc,0xcc,0xcc};
 
 void setup()
@@ -44,7 +35,7 @@ void setup()
         BRASIL		921.42MHz
         RUSSIA		896MHz
     */
-    nrf905.write_config(write_config_buf);
+    nrf905.write_config(EUROPE);
 	
 	
     nrf905.read_config(read_config_buf);
