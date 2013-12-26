@@ -8,14 +8,7 @@
 unsigned char rx_buf[BUF_LEN]= {0};
 unsigned char read_config_buf[CONF_LEN];
 unsigned char rx_address[4]= {0xcc,0xcc,0xcc,0xcc};
-unsigned char write_config_buf[CONF_LEN]={
-    0x76,                   //CH_NO,868.4MHZ
-    0x0E,                   //output power 10db, resend disable, Current Normal operation
-    0x44,                   //4-byte address
-    0x20,0x20,              //receive or send data length 32 bytes
-    0xCC,0xCC,0xCC,0xCC,    //receiving address
-    0x58,                   //CRC enable,8bit CRC,external clock disable,16MHZ Oscillator
-};
+
 void putstring(unsigned char *str)
 {
     while(*str){
